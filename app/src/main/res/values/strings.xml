@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="single_user">Single User</string>
+    <string name="gameshow">Gameshow Buzzer</string>
+    <string name="stats">Stats</string>
 </resources>
