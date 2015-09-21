@@ -1,9 +1,11 @@
 package com.ualberta.kmbaker.kmbaker_reflex;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -33,5 +35,12 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    /*Respond to Single User button click
+    * Must be public void and have a View as the only parameter*/
+    public void testReflex(View view) {
+        /*Do something - go to test reflex*/
+        Intent intent = new Intent(this, testReflexActivity.class);
+        startActivity(intent);
     }
 }
