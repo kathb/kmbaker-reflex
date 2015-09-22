@@ -24,6 +24,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ualberta.kmbaker.kmbaker_reflex.MainActivity" />
         </activity>
+        <activity
+            android:name=".testReflexActivity"
+            android:label="@string/title_activity_test_reflex"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ualberta.kmbaker.kmbaker_reflex.MainActivity" />
+        </activity>
+        <activity
+            android:name=".useBuzzerActivity"
+            android:label="@string/title_activity_use_buzzer"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ualberta.kmbaker.kmbaker_reflex.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

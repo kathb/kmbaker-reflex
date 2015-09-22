@@ -5,20 +5,20 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class MainActivity extends ActionBarActivity {
+public class testReflexActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test_reflex);
+        Intent intent = getIntent();//need this??
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_test_reflex, menu);
         return true;
     }
 
@@ -35,18 +35,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    /*Respond to Single User button click
-    * Must be public void and have a View as the only parameter*/
-    public void testReflex(View view) {
-        /*Do something - go to test reflex*/
-        Intent intent = new Intent(this, testReflexActivity.class);
-        startActivity(intent);
-    }
-
-    public void useBuzzer(View view) {
-        /*Go to gameshow buzzer activity*/
-        Intent intent = new Intent(this, useBuzzerActivity.class);
-        startActivity(intent);
     }
 }

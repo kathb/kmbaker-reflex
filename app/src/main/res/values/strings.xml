@@ -7,4 +7,6 @@
     <string name="gameshow">Gameshow Buzzer</string>
     <string name="stats">Stats</string>
     <string name="title_activity_test_reflex">Test Your Reflexes</string>
+    <string name="push">Push me!</string>
+    <string name="title_activity_use_buzzer">Gameshow Buzzer</string>
 </resources>
