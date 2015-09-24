@@ -1,5 +1,8 @@
 package com.ualberta.kmbaker.kmbaker_reflex;
 
+import android.app.AlertDialog;
+import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +16,20 @@ public class testReflexActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_reflex);
         Intent intent = getIntent();//need this??
+
+        /* http://www.mkyong.com/android/android-alert-dialog-example/ and
+            https://developer.android.com/guide/topics/ui/dialogs.html
+         */
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("React fast! \nTap the button when told to.")
+        .setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // does something??
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 
     @Override
