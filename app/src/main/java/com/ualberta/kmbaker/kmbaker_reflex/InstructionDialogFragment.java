@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 /**
  * Created by kmbaker on 9/24/15.
+ * Currently not being used - probably will never be
  */
 
 /* Adapted from https://developer.android.com/guide/topics/ui/dialogs.html */
