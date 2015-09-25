@@ -2,6 +2,7 @@ package com.ualberta.kmbaker.kmbaker_reflex;
 
 import android.app.AlertDialog;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.CountDownTimer;
@@ -13,18 +14,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class testReflexActivity extends ActionBarActivity {
 
     private TextView text;
     private ReflexCountDownTimer countDown;
+    private Context context = this;
+    private Boolean timerDone;
+    private ArrayList<Integer> statistics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_reflex);
         Intent intent = getIntent();//need this??
 
+        timerDone = false;
         text = (TextView) findViewById(R.id.textView);
 
         Button reflexButton = (Button) findViewById(R.id.reflexButton);
@@ -34,7 +41,25 @@ public class testReflexActivity extends ActionBarActivity {
                 setResult(RESULT_OK);
                 if (!timerDone) {
                     // timer hasn't gone off yet
-                    // alertDialog
+                    // alertDialog to say too early
+                    // restart timer
+                    // stop timer
+                    countDown.cancel();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setMessage("Too soon!")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // restarts timer???
+                                    countDown.start();
+                                }
+                            });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+
+                }
+                else {
+                    // record end time
+                    // save in file
                 }
             }
         });
@@ -42,7 +67,7 @@ public class testReflexActivity extends ActionBarActivity {
         /* http://www.mkyong.com/android/android-alert-dialog-example/ and
             https://developer.android.com/guide/topics/ui/dialogs.html
          */
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("React fast! \nTap the button when told to.")
         .setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
@@ -95,7 +120,7 @@ public class testReflexActivity extends ActionBarActivity {
         {
             //text is
             text.setText("Now!");
-            //timeElapsedView.setText("Time Elapsed: " + String.valueOf(startTime));
+            timerDone = true;
         }
 
         @Override
