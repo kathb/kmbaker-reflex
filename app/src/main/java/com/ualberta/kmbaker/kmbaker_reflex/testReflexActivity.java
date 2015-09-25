@@ -11,19 +11,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Random;
+
+
 
 public class testReflexActivity extends ActionBarActivity {
-
     private TextView text;
     private ReflexCountDownTimer countDown;
     private Context context = this;
     private Boolean timerDone;
-    private ArrayList<Integer> statistics;
+    private Statistics stats = new Statistics();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,10 +56,18 @@ public class testReflexActivity extends ActionBarActivity {
                     AlertDialog alertDialog = builder.create();
                     alertDialog.show();
 
-                }
-                else {
+                } else {
                     // record end time
                     // save in file
+
+                    /* Testing Statistics class */
+                    /*
+                    stats.addTime(10);
+                    stats.addTime(20);
+                    stats.addTime(25);
+                    setContentView(R.layout.activity_test_reflex);
+                    TextView textView = (TextView) findViewById(R.id.textView2);
+                    textView.setText(Integer.toString(stats.getMedianHundred())); */
                 }
             }
         });
@@ -81,6 +89,7 @@ public class testReflexActivity extends ActionBarActivity {
         /* Not sure if this should be in onResume() or onCreate() */
         Integer randWait = new RandomWaitTime().getRandWait();
         countDown = new ReflexCountDownTimer((long) randWait, 2000);
+
 
     }
 
