@@ -6,13 +6,15 @@ package com.ualberta.kmbaker.kmbaker_reflex;
  * Not finished
  */
 public class ReflexTimer {
-    private long startTime;
-    private long endTime;
+    private Long startTime;
+    private Long endTime;
 
     public ReflexTimer() {
+        startTime = 0L;
+        endTime = 0L;
     }
 
-    public long getStartTime() {
+    public Long getStartTime() {
         return startTime;
     }
 
@@ -20,12 +22,16 @@ public class ReflexTimer {
         this.startTime = startTime;
     }
 
-    public long getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
     public void setEndTime(long endTime) {
         this.endTime = endTime;
+    }
+
+    public Long getTimeInterval() {
+        return endTime - startTime;
     }
 
 }

@@ -24,6 +24,7 @@ public class testReflexActivity extends ActionBarActivity {
     private Context context = this;
     private Boolean timerDone;
     private Statistics stats = new Statistics();
+    private ReflexTimer timer = new ReflexTimer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,10 @@ public class testReflexActivity extends ActionBarActivity {
                     // record end time
                     // save in file
 
+                    timer.setEndTime(System.currentTimeMillis());
+                    Long time = timer.getTimeInterval();
+                    //need to change types in statistics class to long
+                    stats.addTime((Integer) time);
                     /* Testing Statistics class */
                     /*
                     stats.addTime(10);
@@ -130,6 +135,7 @@ public class testReflexActivity extends ActionBarActivity {
             //text is
             text.setText("Now!");
             timerDone = true;
+            timer.setStartTime(System.currentTimeMillis());
         }
 
         @Override
