@@ -20,6 +20,7 @@
             android:textSize="25sp"
             android:text="1"
             android:id="@+id/threeplayerbutton1"
+            android:onClick="clickButton1"
             />
     </LinearLayout>
     <LinearLayout
@@ -34,6 +35,7 @@
             android:text="2"
             android:textSize="25sp"
             android:id="@+id/threeplayerbutton2"
+            android:onClick="clickButton2"
             />
     </LinearLayout>
     <LinearLayout
@@ -48,6 +50,7 @@
             android:text="3"
             android:textSize="25sp"
             android:id="@+id/threeplayerbutton3"
+            android:onClick="clickButton3"
             />
     </LinearLayout>
 </LinearLayout>

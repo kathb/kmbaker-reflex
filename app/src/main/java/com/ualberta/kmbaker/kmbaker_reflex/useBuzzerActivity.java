@@ -19,8 +19,6 @@ public class useBuzzerActivity extends ActionBarActivity {
 
         Dialog dialog = onCreateDialog(savedInstanceState);
         dialog.show();
-
-
     }
 
 

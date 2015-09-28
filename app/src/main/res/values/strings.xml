@@ -18,8 +18,8 @@
          <item
              >4</item>
      </string-array>
-    <string name="title_activity_two_player">twoPlayerActivity</string>
-    <string name="title_activity_three_player">threePlayerActivity</string>
-    <string name="title_activity_four_player">fourPlayerActivity</string>
+    <string name="title_activity_two_player">Gameshow Buzzer</string>
+    <string name="title_activity_three_player">Gameshow Buzzer</string>
+    <string name="title_activity_four_player">Gameshow Buzzer</string>
 
 </resources>

@@ -1,16 +1,52 @@
 package com.ualberta.kmbaker.kmbaker_reflex;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class twoPlayerActivity extends ActionBarActivity {
-
+    private Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_player);
+
+    }
+
+
+    public void clickButton1(View view) {
+        //record button click
+        GameShowStatsSingleton.getGameShowStats().addStat(1, 2);
+        //display who clicked first
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Player 1 is first")
+                .setPositiveButton("Play again", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //? start again ?
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void clickButton2(View view) {
+        //record button click
+        GameShowStatsSingleton.getGameShowStats().addStat(2, 2);
+        //display who clicked first
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Player 2 is first")
+                .setPositiveButton("Play again", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //? start again ?
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override
