@@ -10,17 +10,17 @@ import java.util.Collections;
  * Need to change Integers to Floats or Doubles???????
  */
 public class Statistics {
-    private ArrayList<Integer> allStats;
-    private ArrayList<Integer> lastTen;
-    private ArrayList<Integer> lastHundred;
+    private ArrayList<Long> allStats;
+    private ArrayList<Long> lastTen;
+    private ArrayList<Long> lastHundred;
 
     public Statistics() {
-        allStats = new ArrayList<Integer>();
-        lastTen = new ArrayList<Integer>();
-        lastHundred = new ArrayList<Integer>();
+        allStats = new ArrayList<Long>();
+        lastTen = new ArrayList<Long>();
+        lastHundred = new ArrayList<Long>();
     }
 
-    public void addTime(Integer time) {
+    public void addTime(Long time) {
         allStats.add(time);
         /* sorting arrayList: http://java67.blogspot.sg/2012/08/how-to-sort-arraylist-in-java-list.html */
         Collections.sort(allStats);
@@ -41,9 +41,9 @@ public class Statistics {
         }
     }
 
-    public Integer getMedianAll() {
+    public Long getMedianAll() {
         Integer size = allStats.size();
-        Integer median;
+        Long median;
         int index = size/2;
         if (size%2 == 0) {
             //even size
@@ -55,11 +55,11 @@ public class Statistics {
         }
         return median;
     }
-    public Integer getMedianTen() {
-        ArrayList<Integer> sorted = lastTen;
+    public Long getMedianTen() {
+        ArrayList<Long> sorted = lastTen;
         Collections.sort(sorted);
         Integer size = sorted.size();
-        Integer median;
+        Long median;
         int index = size/2;
         if (size%2 == 0) {
             //even size
@@ -72,11 +72,11 @@ public class Statistics {
         return median;
     }
 
-    public Integer getMedianHundred() {
-        ArrayList<Integer> sorted = lastHundred;
+    public Long getMedianHundred() {
+        ArrayList<Long> sorted = lastHundred;
         Collections.sort(sorted);
         Integer size = sorted.size();
-        Integer median;
+        Long median;
         int index = size/2;
         if (size%2 == 0) {
             //even size
@@ -89,54 +89,54 @@ public class Statistics {
         return median;
     }
 
-    public Integer getMaxAll() {
+    public Long getMaxAll() {
         return Collections.max(allStats);
     }
 
-    public Integer getMaxTen() {
+    public Long getMaxTen() {
         return Collections.max(lastTen);
     }
 
-    public Integer getMaxHundred() {
+    public Long getMaxHundred() {
         return Collections.max(lastHundred);
     }
 
-    public Integer getMinAll() {
+    public Long getMinAll() {
         return Collections.min(allStats);
     }
 
-    public Integer getMinTen() {
+    public Long getMinTen() {
         return Collections.min(lastTen);
     }
 
-    public Integer getMinHundred() {
+    public Long getMinHundred() {
         return Collections.min(lastHundred);
     }
 
-    public Integer getAverageAll() {
-        Integer average = 0;
+    public Long getAverageAll() {
+        Long average = 0L;
         Integer size = allStats.size();
-        for (Integer value: allStats) {
+        for (Long value: allStats) {
             average += value;
         }
         average = average/size;
         return average;
     }
 
-    public Integer getAverageTen() {
-        Integer average = 0;
+    public Long getAverageTen() {
+        Long average = 0L;
         Integer size = lastTen.size();
-        for (Integer value: lastTen) {
+        for (Long value: lastTen) {
             average += value;
         }
         average = average/size;
         return average;
     }
 
-    public Integer getAverageHundred() {
-        Integer average = 0;
+    public Long getAverageHundred() {
+        Long average = 0L;
         Integer size = lastHundred.size();
-        for (Integer value: lastHundred) {
+        for (Long value: lastHundred) {
             average += value;
         }
         average = average/size;

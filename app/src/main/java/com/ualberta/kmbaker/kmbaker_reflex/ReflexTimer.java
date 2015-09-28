@@ -18,16 +18,16 @@ public class ReflexTimer {
         return startTime;
     }
 
-    public void setStartTime(long startTime) {
-        this.startTime = startTime;
+    public void setStartTime() {
+        this.startTime = System.currentTimeMillis();
     }
 
     public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(long endTime) {
-        this.endTime = endTime;
+    public void setEndTime() {
+        this.endTime = System.currentTimeMillis();
     }
 
     public Long getTimeInterval() {

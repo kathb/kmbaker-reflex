@@ -61,18 +61,18 @@ public class testReflexActivity extends ActionBarActivity {
                     // record end time
                     // save in file
 
-                    timer.setEndTime(System.currentTimeMillis());
+                    timer.setEndTime();
                     Long time = timer.getTimeInterval();
                     //need to change types in statistics class to long
-                    stats.addTime((Integer) time);
+                    stats.addTime(time);
                     /* Testing Statistics class */
-                    /*
-                    stats.addTime(10);
-                    stats.addTime(20);
-                    stats.addTime(25);
+
+                    //stats.addTime(10L);
+                    //stats.addTime(20L);
+                    //stats.addTime(25);
                     setContentView(R.layout.activity_test_reflex);
                     TextView textView = (TextView) findViewById(R.id.textView2);
-                    textView.setText(Integer.toString(stats.getMedianHundred())); */
+                    textView.setText(Long.toString(stats.getMedianHundred()));
                 }
             }
         });
@@ -96,6 +96,72 @@ public class testReflexActivity extends ActionBarActivity {
         countDown = new ReflexCountDownTimer((long) randWait, 2000);
 
 
+    }
+
+    /* Main method - loops to get reflex times */
+    public void playGame() {
+        timerDone = false;
+        text = (TextView) findViewById(R.id.textView);
+
+        Button reflexButton = (Button) findViewById(R.id.reflexButton);
+        reflexButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setResult(RESULT_OK);
+                if (!timerDone) {
+                    // timer hasn't gone off yet
+                    // alertDialog to say too early
+                    // restart timer
+                    // stop timer
+                    countDown.cancel();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setMessage("Too soon!")
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // restarts timer???
+                                    countDown.start();
+                                }
+                            });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
+
+                } else {
+                    // record end time
+                    // save in file
+
+                    timer.setEndTime();
+                    Long time = timer.getTimeInterval();
+                    //need to change types in statistics class to long
+                    stats.addTime(time);
+                    /* Testing Statistics class */
+
+                    //stats.addTime(10L);
+                    //stats.addTime(20L);
+                    //stats.addTime(25);
+                    setContentView(R.layout.activity_test_reflex);
+                    TextView textView = (TextView) findViewById(R.id.textView2);
+                    textView.setText(Long.toString(stats.getMedianHundred()));
+                }
+            }
+        });
+
+        /* http://www.mkyong.com/android/android-alert-dialog-example/ and
+            https://developer.android.com/guide/topics/ui/dialogs.html
+         */
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("React fast! \nTap the button when told to.")
+                .setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // starts timer
+                        countDown.start();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+        /* Not sure if this should be in onResume() or onCreate() */
+        Integer randWait = new RandomWaitTime().getRandWait();
+        countDown = new ReflexCountDownTimer((long) randWait, 2000);
     }
 
     @Override
@@ -135,7 +201,7 @@ public class testReflexActivity extends ActionBarActivity {
             //text is
             text.setText("Now!");
             timerDone = true;
-            timer.setStartTime(System.currentTimeMillis());
+            timer.setStartTime();
         }
 
         @Override
