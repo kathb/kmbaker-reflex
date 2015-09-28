@@ -21,5 +21,13 @@
     <string name="title_activity_two_player">Gameshow Buzzer</string>
     <string name="title_activity_three_player">Gameshow Buzzer</string>
     <string name="title_activity_four_player">Gameshow Buzzer</string>
+    <string name="title_activity_show_stats">showStatsActivity</string>
 
+    <string name="all">All: </string>
+    <string name="last10">Last 10: </string>
+    <string name="last100">Last 100: </string>
+    <string name="player1">Player 1: </string>
+    <string name="player2">Player 2: </string>
+    <string name="player3">Player 3: </string>
+    <string name="player4">Player 4: </string>
 </resources>

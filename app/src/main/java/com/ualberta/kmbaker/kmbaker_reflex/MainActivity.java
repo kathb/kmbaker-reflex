@@ -51,4 +51,10 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, useBuzzerActivity.class);
         startActivity(intent);
     }
+
+    public void goToStats(View view) {
+        /*Go to gameshow buzzer activity*/
+        Intent intent = new Intent(this, showStatsActivity.class);
+        startActivity(intent);
+    }
 }
