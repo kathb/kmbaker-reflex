@@ -40,6 +40,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ualberta.kmbaker.kmbaker_reflex.MainActivity" />
         </activity>
+        <activity
+            android:name=".twoPlayerActivity"
+            android:label="@string/title_activity_two_player"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ualberta.kmbaker.kmbaker_reflex.MainActivity" />
+        </activity>
+        <activity
+            android:name=".threePlayerActivity"
+            android:label="@string/title_activity_three_player"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ualberta.kmbaker.kmbaker_reflex.MainActivity" />
+        </activity>
+        <activity
+            android:name=".fourPlayerActivity"
+            android:label="@string/title_activity_four_player"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ualberta.kmbaker.kmbaker_reflex.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

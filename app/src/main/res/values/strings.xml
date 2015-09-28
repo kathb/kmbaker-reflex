@@ -9,4 +9,17 @@
     <string name="title_activity_test_reflex">Test Your Reflexes</string>
     <string name="push">Push me!</string>
     <string name="title_activity_use_buzzer">Gameshow Buzzer</string>
+     <string-array
+            name="players">
+        <item
+            >2</item>
+         <item
+             >3</item>
+         <item
+             >4</item>
+     </string-array>
+    <string name="title_activity_two_player">twoPlayerActivity</string>
+    <string name="title_activity_three_player">threePlayerActivity</string>
+    <string name="title_activity_four_player">fourPlayerActivity</string>
+
 </resources>
