@@ -25,6 +25,7 @@ public class testReflexActivity extends ActionBarActivity {
     private Boolean timerDone;
     private Statistics stats = new Statistics();
     private ReflexTimer timer = new ReflexTimer();
+    private Long time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,6 @@ public class testReflexActivity extends ActionBarActivity {
         setContentView(R.layout.activity_test_reflex);
         Intent intent = getIntent();//need this??
 
-        timerDone = false;
-        text = (TextView) findViewById(R.id.textView);
-
         Button reflexButton = (Button) findViewById(R.id.reflexButton);
         reflexButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,91 +60,59 @@ public class testReflexActivity extends ActionBarActivity {
                     // save in file
 
                     timer.setEndTime();
-                    Long time = timer.getTimeInterval();
+                    time = timer.getTimeInterval();
                     //need to change types in statistics class to long
                     stats.addTime(time);
-                    /* Testing Statistics class */
 
-                    //stats.addTime(10L);
-                    //stats.addTime(20L);
-                    //stats.addTime(25);
+                    /* Testing Statistics class */
                     setContentView(R.layout.activity_test_reflex);
                     TextView textView = (TextView) findViewById(R.id.textView2);
-                    textView.setText(Long.toString(stats.getMedianHundred()));
+                    textView.setText(Long.toString(stats.getMaxAll()));
+                    timerDone = false;
+                    startAgain();
                 }
             }
         });
+
+        playGame();
+    }
+
+    /* want to loop to allow to keep playing */
+    public void playGame() {
+        text = (TextView) findViewById(R.id.textView);
+        //Button reflexButton = (Button) findViewById(R.id.reflexButton);
+        timerDone = false;
+        Integer randWait = new RandomWaitTime().getRandWait();
+        countDown = new ReflexCountDownTimer((long) randWait, 2000);
+
+        displayWelcome();
+
+
 
         /* http://www.mkyong.com/android/android-alert-dialog-example/ and
             https://developer.android.com/guide/topics/ui/dialogs.html
          */
+
+        /*
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("React fast! \nTap the button when told to.")
-        .setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // starts timer
-                countDown.start();
-            }
-        });
+                .setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // starts timer
+                        countDown.start();
+                    }
+                });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
+*/
         /* Not sure if this should be in onResume() or onCreate() */
-        Integer randWait = new RandomWaitTime().getRandWait();
-        countDown = new ReflexCountDownTimer((long) randWait, 2000);
-
-
+        //Integer randWait = new RandomWaitTime().getRandWait();
+        //countDown = new ReflexCountDownTimer((long) randWait, 2000);
     }
 
-    /* Main method - loops to get reflex times */
-    public void playGame() {
-        timerDone = false;
-        text = (TextView) findViewById(R.id.textView);
-
-        Button reflexButton = (Button) findViewById(R.id.reflexButton);
-        reflexButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setResult(RESULT_OK);
-                if (!timerDone) {
-                    // timer hasn't gone off yet
-                    // alertDialog to say too early
-                    // restart timer
-                    // stop timer
-                    countDown.cancel();
-                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setMessage("Too soon!")
-                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    // restarts timer???
-                                    countDown.start();
-                                }
-                            });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-
-                } else {
-                    // record end time
-                    // save in file
-
-                    timer.setEndTime();
-                    Long time = timer.getTimeInterval();
-                    //need to change types in statistics class to long
-                    stats.addTime(time);
-                    /* Testing Statistics class */
-
-                    //stats.addTime(10L);
-                    //stats.addTime(20L);
-                    //stats.addTime(25);
-                    setContentView(R.layout.activity_test_reflex);
-                    TextView textView = (TextView) findViewById(R.id.textView2);
-                    textView.setText(Long.toString(stats.getMedianHundred()));
-                }
-            }
-        });
-
+    public void displayWelcome() {
         /* http://www.mkyong.com/android/android-alert-dialog-example/ and
-            https://developer.android.com/guide/topics/ui/dialogs.html
+           https://developer.android.com/guide/topics/ui/dialogs.html
          */
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("React fast! \nTap the button when told to.")
@@ -158,10 +124,21 @@ public class testReflexActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
-        /* Not sure if this should be in onResume() or onCreate() */
+    }
+    public void startAgain() {
         Integer randWait = new RandomWaitTime().getRandWait();
         countDown = new ReflexCountDownTimer((long) randWait, 2000);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Your time: "+Long.toString(time)+"ms")
+                .setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // starts timer
+                        countDown.start();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override
