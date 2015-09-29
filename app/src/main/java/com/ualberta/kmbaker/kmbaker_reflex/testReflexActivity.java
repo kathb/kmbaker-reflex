@@ -23,7 +23,7 @@ public class testReflexActivity extends ActionBarActivity {
     private ReflexCountDownTimer countDown;
     private Context context = this;
     private Boolean timerDone = false;
-    private Statistics stats = new Statistics();
+    //private Statistics stats = new Statistics();
     private ReflexTimer timer = new ReflexTimer();
     private Long time;
     private Integer randWait;
@@ -35,56 +35,48 @@ public class testReflexActivity extends ActionBarActivity {
         setContentView(R.layout.activity_test_reflex);
         Intent intent = getIntent();//need this??
 
-        /* Set button onClickListener */
-        Button reflexButton = (Button) findViewById(R.id.reflexButton);
-        reflexButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setResult(RESULT_OK);
-                if (!timerDone) {
-                    // timer hasn't gone off yet
-                    // alertDialog to say too early
-                    // restart timer
-                    // stop timer
-                    countDown.cancel();
-                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setMessage("Too soon!")
-                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    // restarts timer???
-                                    countDown.start();
-                                }
-                            });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
+        text = (TextView) findViewById(R.id.textView);
+        playGame();
+    }
 
-                } else {
-                    // record end time
-                    // save in file
+    public void pushButton(View view) {
+        Statistics stats = StatisticsSingleton.getStats();
+        if (!timerDone) {
+            countDown.cancel();
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setMessage("Too soon!")
+                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // restarts timer???
+                            countDown.start();
+                        }
+                    });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
 
-                    timer.setEndTime();
-                    time = timer.getTimeInterval();
-                    //need to change types in statistics class to long
-                    stats.addTime(time);
+        } else {
+            // record end time
+            // save in file
+
+            timer.setEndTime();
+            time = timer.getTimeInterval();
+            //need to change types in statistics class to long
+            stats.addTime(time);
 
                     /* Testing Statistics class */
-                    setContentView(R.layout.activity_test_reflex);
-                    TextView textView = (TextView) findViewById(R.id.textView2);
-                    textView.setText(Long.toString(stats.getMaxAll()));
+            setContentView(R.layout.activity_test_reflex);
+            TextView textView = (TextView) findViewById(R.id.textView2);
+            textView.setText(Long.toString(time));//Long.toString(stats.getMaxAll())
 
-                    timerDone = false;
-                    startAgain();
-                }
-            }
-        });
-
-        playGame();
+            timerDone = false;
+            startAgain();
+        }
     }
 
     /* want to loop to allow to keep playing */
     public void playGame() {
-        text = (TextView) findViewById(R.id.textView);
-        timerDone = false;
+        //timerDone = false;
+        //set up random wait
         randWaitTime = new RandomWaitTime();
         randWait = randWaitTime.getRandWait();
         countDown = new ReflexCountDownTimer((long) randWait, 2000);
@@ -160,7 +152,7 @@ public class testReflexActivity extends ActionBarActivity {
         @Override
         public void onFinish()
         {
-            //text is
+            text = (TextView) findViewById(R.id.textView);
             text.setText("Now!");
             timerDone = true;
             timer.setStartTime();

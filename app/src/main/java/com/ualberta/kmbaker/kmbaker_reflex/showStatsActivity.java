@@ -15,6 +15,20 @@ public class showStatsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_show_stats);
 
         printGameShowStats();
+        printReflexStats();
+    }
+
+    public void printReflexStats() {
+        Statistics stats = StatisticsSingleton.getStats();
+
+        TextView textView = (TextView) findViewById(R.id.textView5);
+        textView.setText("All: "+Long.toString(stats.getMinAll()));
+
+        textView = (TextView) findViewById(R.id.textView6);
+        textView.setText("Last 10: "+Long.toString(stats.getMinTen()));
+
+        textView = (TextView) findViewById(R.id.textView7);
+        textView.setText("Last 100: "+Long.toString(stats.getMinHundred()));
     }
 
     /* change text views to show stats for gameshow buzzer */

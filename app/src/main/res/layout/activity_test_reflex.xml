@@ -12,7 +12,8 @@
         android:text="@string/push"
         android:id="@+id/reflexButton"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="pushButton"/>
 
     <TextView
         android:layout_width="wrap_content"

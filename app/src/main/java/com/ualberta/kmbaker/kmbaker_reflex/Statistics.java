@@ -7,7 +7,7 @@ import java.util.Collections;
 
 /**
  * Created by kmbaker on 9/25/15.
- * Need to change Integers to Floats or Doubles???????
+ *
  */
 public class Statistics {
     private ArrayList<Long> allStats;
@@ -18,6 +18,12 @@ public class Statistics {
         allStats = new ArrayList<Long>();
         lastTen = new ArrayList<Long>();
         lastHundred = new ArrayList<Long>();
+    }
+
+    public void clearReflexStats() {
+        allStats.clear();
+        lastTen.clear();
+        lastHundred.clear();
     }
 
     public void addTime(Long time) {
