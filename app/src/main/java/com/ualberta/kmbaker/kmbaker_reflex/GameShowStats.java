@@ -57,15 +57,15 @@ public class GameShowStats {
     }
 
     public void clearGameShowStats() {
-        twoPlayers1 = 0;
-        twoPlayers2 = 0;
-        threePlayers1 = 0;
-        threePlayers2 = 0;
-        threePlayers3 = 0;
-        fourPlayers1 = 0;
-        fourPlayers2 = 0;
-        fourPlayers3 = 0;
-        fourPlayers4 = 0;
+        this.twoPlayers1 = 0;
+        this.twoPlayers2 = 0;
+        this.threePlayers1 = 0;
+        this.threePlayers2 = 0;
+        this.threePlayers3 = 0;
+        this.fourPlayers1 = 0;
+        this.fourPlayers2 = 0;
+        this.fourPlayers3 = 0;
+        this.fourPlayers4 = 0;
     }
 
     public Integer getTwoPlayers1() {

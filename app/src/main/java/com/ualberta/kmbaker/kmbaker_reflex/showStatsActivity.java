@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class showStatsActivity extends ActionBarActivity {
@@ -14,7 +15,6 @@ public class showStatsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_show_stats);
 
         printGameShowStats();
-
     }
 
     /* change text views to show stats for gameshow buzzer */
@@ -47,6 +47,12 @@ public class showStatsActivity extends ActionBarActivity {
 
         textView = (TextView) findViewById(R.id.textView32);
         textView.setText("Player 4: "+Integer.toString(gameShowStats.getFourPlayers4()));
+    }
+
+    public void clearStats(View view) {
+        GameShowStatsSingleton.getGameShowStats().clearGameShowStats();
+        //add in clear reflex stats
+        printGameShowStats();
     }
 
     @Override
