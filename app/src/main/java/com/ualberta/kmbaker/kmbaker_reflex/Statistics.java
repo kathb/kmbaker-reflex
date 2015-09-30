@@ -49,6 +49,9 @@ public class Statistics {
 
     public Long getMedianAll() {
         Integer size = allStats.size();
+        if (size == 0) {
+            return 0L;
+        }
         Long median;
         int index = size/2;
         if (size%2 == 0) {
@@ -63,8 +66,11 @@ public class Statistics {
     }
     public Long getMedianTen() {
         ArrayList<Long> sorted = lastTen;
-        Collections.sort(sorted);
         Integer size = sorted.size();
+        if (size == 0) {
+            return 0L;
+        }
+        Collections.sort(sorted);
         Long median;
         int index = size/2;
         if (size%2 == 0) {
@@ -80,8 +86,11 @@ public class Statistics {
 
     public Long getMedianHundred() {
         ArrayList<Long> sorted = lastHundred;
-        Collections.sort(sorted);
         Integer size = sorted.size();
+        if (size == 0) {
+            return 0L;
+        }
+        Collections.sort(sorted);
         Long median;
         int index = size/2;
         if (size%2 == 0) {
@@ -96,32 +105,53 @@ public class Statistics {
     }
 
     public Long getMaxAll() {
+        if (allStats.size() == 0) {
+            return 0L;
+        }
         return Collections.max(allStats);
     }
 
     public Long getMaxTen() {
+        if (lastTen.size() == 0) {
+            return 0L;
+        }
         return Collections.max(lastTen);
     }
 
     public Long getMaxHundred() {
+        if (lastHundred.size() == 0) {
+            return 0L;
+        }
         return Collections.max(lastHundred);
     }
 
     public Long getMinAll() {
+        if (allStats.size() == 0) {
+            return 0L;
+        }
         return Collections.min(allStats);
     }
 
     public Long getMinTen() {
+        if (lastTen.size() == 0) {
+            return 0L;
+        }
         return Collections.min(lastTen);
     }
 
     public Long getMinHundred() {
+        if (lastHundred.size() == 0) {
+            return 0L;
+        }
         return Collections.min(lastHundred);
     }
 
     public Long getAverageAll() {
         Long average = 0L;
         Integer size = allStats.size();
+        if (size == 0) {
+            return 0L;
+        }
         for (Long value: allStats) {
             average += value;
         }
@@ -132,6 +162,9 @@ public class Statistics {
     public Long getAverageTen() {
         Long average = 0L;
         Integer size = lastTen.size();
+        if (size == 0) {
+            return 0L;
+        }
         for (Long value: lastTen) {
             average += value;
         }
@@ -142,6 +175,9 @@ public class Statistics {
     public Long getAverageHundred() {
         Long average = 0L;
         Integer size = lastHundred.size();
+        if (size == 0) {
+            return 0L;
+        }
         for (Long value: lastHundred) {
             average += value;
         }

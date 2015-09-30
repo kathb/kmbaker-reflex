@@ -29,6 +29,33 @@ public class showStatsActivity extends ActionBarActivity {
 
         textView = (TextView) findViewById(R.id.textView7);
         textView.setText("Last 100: "+Long.toString(stats.getMinHundred()));
+
+        textView = (TextView) findViewById(R.id.textView9);
+        textView.setText("All: "+Long.toString(stats.getMaxAll()));
+
+        textView = (TextView) findViewById(R.id.textView10);
+        textView.setText("Last 10: "+Long.toString(stats.getMaxTen()));
+
+        textView = (TextView) findViewById(R.id.textView11);
+        textView.setText("Last 100: "+Long.toString(stats.getMaxHundred()));
+
+        textView = (TextView) findViewById(R.id.textView13);
+        textView.setText("All: "+Long.toString(stats.getAverageAll()));
+
+        textView = (TextView) findViewById(R.id.textView14);
+        textView.setText("Last 10: "+Long.toString(stats.getAverageTen()));
+
+        textView = (TextView) findViewById(R.id.textView15);
+        textView.setText("Last 100: "+Long.toString(stats.getAverageHundred()));
+
+        textView = (TextView) findViewById(R.id.textView17);
+        textView.setText("All: "+Long.toString(stats.getMedianAll()));
+
+        textView = (TextView) findViewById(R.id.textView18);
+        textView.setText("Last 10: "+Long.toString(stats.getMedianTen()));
+
+        textView = (TextView) findViewById(R.id.textView19);
+        textView.setText("Last 100: "+Long.toString(stats.getMedianHundred()));
     }
 
     /* change text views to show stats for gameshow buzzer */
@@ -65,8 +92,10 @@ public class showStatsActivity extends ActionBarActivity {
 
     public void clearStats(View view) {
         GameShowStatsSingleton.getGameShowStats().clearGameShowStats();
+        StatisticsSingleton.getStats().clearReflexStats();
         //add in clear reflex stats
         printGameShowStats();
+        printReflexStats();
     }
 
     @Override
