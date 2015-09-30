@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class showStatsActivity extends ActionBarActivity {
 
     @Override
@@ -102,7 +105,6 @@ public class showStatsActivity extends ActionBarActivity {
 
     public void sendEmail(View view) {
         /* http://developer.android.com/guide/components/intents-filters.html */
-
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.setType("message/rfc822");
@@ -119,7 +121,29 @@ public class showStatsActivity extends ActionBarActivity {
     }
 
     public String getEmailText() {
-        String email = "Hi!";;
+        Statistics stats = StatisticsSingleton.getStats();
+        GameShowStats gameShowStats = GameShowStatsSingleton.getGameShowStats();
+        String email = "My reaction times\nMinimum\nAll: "+Long.toString(stats.getMinAll()) +
+                        "\t\tLast 10: "+ Long.toString(stats.getMinTen()) +
+                        "\t\tLast 100: "+ Long.toString(stats.getMinHundred()) +
+                        "\nMaximum\nAll: "+Long.toString(stats.getMaxAll()) +
+                "\t\tLast 10: "+ Long.toString(stats.getMaxTen()) +
+                "\t\tLast 100: "+ Long.toString(stats.getMaxHundred()) +
+                "\nAverage\nAll: " + Long.toString(stats.getAverageAll()) +
+                "\t\tLast 10: "+ Long.toString(stats.getAverageTen()) +
+                "\t\tLast 100: "+ Long.toString(stats.getAverageHundred()) +
+                "\nMedian\nAll: " + Long.toString(stats.getMedianAll()) +
+                "\t\tLast 10: "+ Long.toString(stats.getMedianTen()) +
+                "\t\tLast 100: "+ Long.toString(stats.getMedianHundred()) +
+                "\n\nBuzzer counts\n2 Players:\n" + "Player 1: " + Integer.toString(gameShowStats.getTwoPlayers1()) +
+                "\t\tPlayer 2: "+ Integer.toString(gameShowStats.getTwoPlayers2()) +
+                "\n3 Players:\n" + "Player 1: " + Integer.toString(gameShowStats.getThreePlayers1()) +
+                "\t\tPlayer 2: "+ Integer.toString(gameShowStats.getThreePlayers2()) +
+                "\t\tPlayer 3: " + Integer.toString(gameShowStats.getThreePlayers3()) +
+                "\n4 Players:\nPlayer 1: " + Integer.toString(gameShowStats.getFourPlayers1()) +
+                "\t\tPlayer 2: " + Integer.toString(gameShowStats.getFourPlayers2()) +
+                "\nPlayer 3: " + Integer.toString(gameShowStats.getFourPlayers3()) +
+                "\t\tPlayer 4: " + Integer.toString(gameShowStats.getFourPlayers4());
         return email;
     }
 
