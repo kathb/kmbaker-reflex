@@ -164,7 +164,7 @@
         android:text="@string/player1"
         android:id="@+id/textView22"
         android:layout_below="@+id/textView21"
-        android:layout_toEndOf="@+id/textView17" />
+        android:layout_alignEnd="@+id/textView8" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -262,6 +262,15 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="clearStats"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email your stats"
+        android:id="@+id/button4"
+        android:layout_above="@+id/clear"
+        android:layout_centerHorizontal="true"
+        android:onClick="sendEmail"/>
 
 
 </RelativeLayout>

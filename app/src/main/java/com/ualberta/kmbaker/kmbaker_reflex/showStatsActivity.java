@@ -1,5 +1,7 @@
 package com.ualberta.kmbaker.kmbaker_reflex;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -96,6 +98,28 @@ public class showStatsActivity extends ActionBarActivity {
         //add in clear reflex stats
         printGameShowStats();
         printReflexStats();
+    }
+
+    public void sendEmail(View view) {
+        /* http://developer.android.com/guide/components/intents-filters.html */
+        /*
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_EMAIL, "kmbaker@ualberta.ca");
+        sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Some stats for you");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, getEmailText());
+        startActivity(Intent.createChooser(sendIntent, "send email"));*/
+        /*http://stackoverflow.com/questions/3132889/action-sendto-for-sending-an-email sept 29,  Pierangelo Dal Ben and Teo Inke*/
+        Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
+        Uri uri = Uri.parse("mailto:kmbaker@ualberta.ca");
+        sendIntent.setData(uri);
+        startActivity(Intent.createChooser(sendIntent, "Send email"));
+    }
+
+    public String getEmailText() {
+        String email = "";
+        email.concat("Hi");
+        return email;
     }
 
     @Override
