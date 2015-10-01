@@ -62,36 +62,4 @@ public class ListManager {
             throw new RuntimeException(e);
         }
     }
-
-    public static void loadGameShowFromFile(Context context) {
-        try {
-            FileInputStream fis = context.openFileInput(BUZZERFILENAME);
-            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-            Gson gson = new Gson();
-            // Taken from https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
-            Type listType = new TypeToken<GameShowStats>() {}.getType();
-            buzzer = gson.fromJson(in, listType);
-            GameShowStatsSingleton.addGameShowStats(buzzer);
-
-        } catch (FileNotFoundException e) {
-            buzzer = new GameShowStats();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void saveGameShowInFile(Context context) {
-        try {
-            FileOutputStream fos = context.openFileOutput(BUZZERFILENAME, 0);
-            OutputStreamWriter writer = new OutputStreamWriter(fos);
-            Gson gson = new Gson();
-            gson.toJson(buzzer, writer);
-            writer.flush();
-            fos.close();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }

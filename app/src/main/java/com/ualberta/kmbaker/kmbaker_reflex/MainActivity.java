@@ -23,7 +23,6 @@ public class MainActivity extends ActionBarActivity {
         // TODO Auto-generated method stub
         super.onStart();
         listManager.loadStatsFromFile(this); //have to call before setting up adapter
-        listManager.loadGameShowFromFile(this);
     }
 
     @Override
