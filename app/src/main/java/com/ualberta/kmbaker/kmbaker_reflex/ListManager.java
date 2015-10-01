@@ -18,15 +18,15 @@ import java.util.ArrayList;
 
 /**
  * Created by kmbaker on 9/30/15.
+ *
+ * Designed using the code added in lab 3 in lonelytwitter
  */
 public class ListManager {
 
     private static final String STATSFILENAME = "statsfile.sav";
-    private static final String BUZZERFILENAME = "buzzerfile.sav";
+    //private static final String BUZZERFILENAME = "buzzerfile.sav";
     private static Statistics stats = StatisticsSingleton.getStats();
-    private static GameShowStats buzzer = GameShowStatsSingleton.getGameShowStats();
-    private ArrayAdapter<Statistics> adapter;
-    private ArrayAdapter<GameShowStats> buzzeradapter;
+    //private static GameShowStats buzzer = GameShowStatsSingleton.getGameShowStats();
 
     public ListManager() {
     }
@@ -62,4 +62,36 @@ public class ListManager {
             throw new RuntimeException(e);
         }
     }
+/*
+    public static void loadBuzzerFromFile(Context context) {
+        try {
+            FileInputStream fis = context.openFileInput(BUZZERFILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            // Taken from https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
+            Type listType = new TypeToken<GameShowStats>() {}.getType();
+            buzzer = gson.fromJson(in, listType);
+            GameShowStatsSingleton.addStats(buzzer);
+
+        } catch (FileNotFoundException e) {
+            GameShowStats gameShowStats = GameShowStatsSingleton.getGameShowStats();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void saveBuzzerInFile(Context context) {
+        try {
+            FileOutputStream fos = context.openFileOutput(BUZZERFILENAME, 0);
+            OutputStreamWriter writer = new OutputStreamWriter(fos);
+            Gson gson = new Gson();
+            gson.toJson(buzzer, writer);
+            writer.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    } */
 }

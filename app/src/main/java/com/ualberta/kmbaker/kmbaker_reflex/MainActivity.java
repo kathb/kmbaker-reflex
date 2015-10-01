@@ -22,6 +22,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
+
         listManager.loadStatsFromFile(this); //have to call before setting up adapter
     }
 

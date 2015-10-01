@@ -11,6 +11,7 @@ import android.view.View;
 
 public class threePlayerActivity extends ActionBarActivity {
     private Context context = this;
+    ListManager listManager = new ListManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
