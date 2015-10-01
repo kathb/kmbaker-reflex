@@ -19,7 +19,32 @@ public class Statistics {
         lastTen = new ArrayList<Long>();
         lastHundred = new ArrayList<Long>();
     }
+    public ArrayList<Long> getAllStats(){
+        return allStats;
+    }
 
+    public void setAllStats(ArrayList<Long> stats)
+    {
+        allStats = stats;
+    }
+
+    public ArrayList<Long> getLastTen(){
+        return lastTen;
+    }
+
+    public void setLastTen(ArrayList<Long> stats)
+    {
+        lastTen = stats;
+    }
+
+    public ArrayList<Long> getLastHundred(){
+        return lastHundred;
+    }
+
+    public void setLastHundred(ArrayList<Long> stats)
+    {
+        lastHundred = stats;
+    }
     public void clearReflexStats() {
         allStats.clear();
         lastTen.clear();

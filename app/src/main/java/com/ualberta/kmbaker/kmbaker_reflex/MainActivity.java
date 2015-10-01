@@ -6,17 +6,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 
 public class MainActivity extends ActionBarActivity {
 
+    private ListManager listManager = new ListManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Statistics stats = StatisticsSingleton.getStats();
-        GameShowStats gameStats = GameShowStatsSingleton.getGameShowStats();
 
+    }
+
+    protected void onStart() {
+        // TODO Auto-generated method stub
+        super.onStart();
+        listManager.loadStatsFromFile(this); //have to call before setting up adapter
+        listManager.loadGameShowFromFile(this);
     }
 
     @Override

@@ -11,6 +11,8 @@ import android.view.View;
 
 public class threePlayerActivity extends ActionBarActivity {
     private Context context = this;
+    private ListManager listManager = new ListManager();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +20,10 @@ public class threePlayerActivity extends ActionBarActivity {
     }
 
     public void clickButton1(View view) {
+        GameShowStats gameShowStats = GameShowStatsSingleton.getGameShowStats();
         //record button click
-        GameShowStatsSingleton.getGameShowStats().addStat(1, 3);
+        gameShowStats.addStat(1, 3);
+        //listManager.saveGameShowInFile(context);
         //display who clicked first
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Player 1 is first")
@@ -35,6 +39,7 @@ public class threePlayerActivity extends ActionBarActivity {
     public void clickButton2(View view) {
         //record button click
         GameShowStatsSingleton.getGameShowStats().addStat(2, 3);
+        //listManager.saveGameShowInFile(context);
         //display who clicked first
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Player 2 is first")
@@ -50,6 +55,7 @@ public class threePlayerActivity extends ActionBarActivity {
     public void clickButton3(View view) {
         //record button click
         GameShowStatsSingleton.getGameShowStats().addStat(3, 3);
+        //listManager.saveGameShowInFile(context);
         //display who clicked first
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Player 3 is first")

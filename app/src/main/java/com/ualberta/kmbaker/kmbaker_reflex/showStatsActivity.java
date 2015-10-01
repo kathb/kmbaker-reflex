@@ -14,6 +14,7 @@ import java.util.List;
 
 public class showStatsActivity extends ActionBarActivity {
 
+    private ListManager listManager = new ListManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +99,8 @@ public class showStatsActivity extends ActionBarActivity {
     public void clearStats(View view) {
         GameShowStatsSingleton.getGameShowStats().clearGameShowStats();
         StatisticsSingleton.getStats().clearReflexStats();
+        listManager.saveStatsInFile(this);
+        listManager.saveGameShowInFile(this);
         //add in clear reflex stats
         printGameShowStats();
         printReflexStats();

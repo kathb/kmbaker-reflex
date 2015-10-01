@@ -11,6 +11,7 @@ import android.view.View;
 
 public class fourPlayerActivity extends ActionBarActivity {
     private Context context = this;
+    private ListManager listManager = new ListManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class fourPlayerActivity extends ActionBarActivity {
     public void clickButton1(View view) {
         //record button click
         GameShowStatsSingleton.getGameShowStats().addStat(1, 4);
+        //listManager.saveGameShowInFile(context);
         //display who clicked first
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Player 1 is first")
@@ -36,6 +38,7 @@ public class fourPlayerActivity extends ActionBarActivity {
     public void clickButton2(View view) {
         //record button click
         GameShowStatsSingleton.getGameShowStats().addStat(2, 4);
+        //listManager.saveGameShowInFile(context);
         //display who clicked first
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Player 2 is first")
@@ -51,6 +54,7 @@ public class fourPlayerActivity extends ActionBarActivity {
     public void clickButton3(View view) {
         //record button click
         GameShowStatsSingleton.getGameShowStats().addStat(3, 4);
+        //listManager.saveGameShowInFile(context);
         //display who clicked first
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Player 3 is first")
@@ -66,6 +70,7 @@ public class fourPlayerActivity extends ActionBarActivity {
     public void clickButton4(View view) {
         //record button click
         GameShowStatsSingleton.getGameShowStats().addStat(4, 4);
+        //listManager.saveGameShowInFile(context);
         //display who clicked first
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setMessage("Player 4 is first")

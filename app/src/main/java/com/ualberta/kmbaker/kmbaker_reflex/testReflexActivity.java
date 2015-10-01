@@ -28,6 +28,7 @@ public class testReflexActivity extends ActionBarActivity {
     private Long time;
     private Integer randWait;
     private RandomWaitTime randWaitTime;
+    private ListManager listManager = new ListManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class testReflexActivity extends ActionBarActivity {
             time = timer.getTimeInterval();
             //need to change types in statistics class to long
             stats.addTime(time);
-
+            listManager.saveStatsInFile(this);
                     /* Testing Statistics class */
             setContentView(R.layout.activity_test_reflex);
             TextView textView = (TextView) findViewById(R.id.textView2);

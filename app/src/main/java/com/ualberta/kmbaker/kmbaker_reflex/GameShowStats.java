@@ -103,4 +103,40 @@ public class GameShowStats {
     public Integer getFourPlayers4() {
         return fourPlayers4;
     }
+
+    public void setTwoPlayers1(Integer i) {
+        twoPlayers1 = i;
+    }
+
+    public void setTwoPlayers2(Integer i) {
+        twoPlayers2 = i;
+    }
+
+    public void setThreePlayers1(Integer i) {
+        threePlayers1 = i;
+    }
+
+    public void setThreePlayers2(Integer i) {
+        threePlayers2 = i;
+    }
+
+    public void setThreePlayers3(Integer i) {
+        threePlayers3 = i;
+    }
+
+    public void setFourPlayers1(Integer i) {
+        fourPlayers1 = i;
+    }
+
+    public void setFourPlayers2(Integer i) {
+        fourPlayers2 = i;
+    }
+
+    public void setFourPlayers3(Integer i) {
+        fourPlayers3 = i;
+    }
+
+    public void setFourPlayers4(Integer i) {
+        fourPlayers4 = i;
+    }
 }
