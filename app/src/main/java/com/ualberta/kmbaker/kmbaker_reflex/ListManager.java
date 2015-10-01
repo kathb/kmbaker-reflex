@@ -19,7 +19,22 @@ import java.util.ArrayList;
 /**
  * Created by kmbaker on 9/30/15.
  *
- * Designed using the code added in lab 3 in lonelytwitter
+ * Designed using the Gson file saving and loading code added in Cmput 301, lab 3 in lonelytwitter.
+ *
+ *  This file is part of kmbaker-reflex.
+ *
+ *  kmbaker-reflex is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ kmbaker-reflex is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with kmbaker-reflex.  If not, see <http://www.gnu.org/licenses/>.
  */
 public class ListManager {
 

@@ -16,14 +16,28 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-/* need to find way to loop and keep getting reflex times */
+/*
+ This file is part of kmbaker-reflex.
+
+ kmbaker-reflex is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ kmbaker-reflex is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with kmbaker-reflex.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 public class testReflexActivity extends ActionBarActivity {
     private TextView text;
     private ReflexCountDownTimer countDown;
     private Context context = this;
     private Boolean timerDone = false;
-    //private Statistics stats = new Statistics();
     private ReflexTimer timer = new ReflexTimer();
     private Long time;
     private Integer randWait;
@@ -34,7 +48,6 @@ public class testReflexActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_reflex);
-        Intent intent = getIntent();//need this??
 
         text = (TextView) findViewById(R.id.textView);
         playGame();
@@ -48,7 +61,7 @@ public class testReflexActivity extends ActionBarActivity {
             builder.setMessage("Too soon!")
                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            // restarts timer???
+                            // restarts timer
                             countDown.start();
                         }
                     });
@@ -64,10 +77,7 @@ public class testReflexActivity extends ActionBarActivity {
             //need to change types in statistics class to long
             stats.addTime(time);
             listManager.saveStatsInFile(this);
-                    /* Testing Statistics class */
             setContentView(R.layout.activity_test_reflex);
-            //TextView textView = (TextView) findViewById(R.id.textView2);
-            //textView.setText(Long.toString(time));//Long.toString(stats.getMaxAll())
 
             timerDone = false;
             startAgain();
@@ -142,7 +152,8 @@ public class testReflexActivity extends ActionBarActivity {
     }
 
     /* http://developer.android.com/reference/android/os/CountDownTimer.html
-    * https://androidcookbook.com/Recipe.seam;jsessionid=DF53064E03C7505C4EBF727E56E0728E?recipeId=1205 */
+    * https://androidcookbook.com/Recipe.seam;jsessionid=DF53064E03C7505C4EBF727E56E0728E?recipeId=1205 by Wagled Davids.
+    * September 25, 2015. */
     public class ReflexCountDownTimer extends CountDownTimer{
 
         public ReflexCountDownTimer(long startTime, long interval)

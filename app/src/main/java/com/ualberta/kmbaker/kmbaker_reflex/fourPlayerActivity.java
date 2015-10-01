@@ -42,7 +42,7 @@ public class fourPlayerActivity extends ActionBarActivity {
         builder.setMessage("Player 1 is first")
                 .setPositiveButton("Play again", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //? start again ?
+                        //start again
                     }
                 });
         AlertDialog alertDialog = builder.create();
@@ -58,7 +58,7 @@ public class fourPlayerActivity extends ActionBarActivity {
         builder.setMessage("Player 2 is first")
                 .setPositiveButton("Play again", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //? start again ?
+                        // start again
                     }
                 });
         AlertDialog alertDialog = builder.create();
@@ -74,7 +74,7 @@ public class fourPlayerActivity extends ActionBarActivity {
         builder.setMessage("Player 3 is first")
                 .setPositiveButton("Play again", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //? start again ?
+                        // start again
                     }
                 });
         AlertDialog alertDialog = builder.create();
@@ -90,7 +90,7 @@ public class fourPlayerActivity extends ActionBarActivity {
         builder.setMessage("Player 4 is first")
                 .setPositiveButton("Play again", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        //? start again ?
+                        // start again
                     }
                 });
         AlertDialog alertDialog = builder.create();

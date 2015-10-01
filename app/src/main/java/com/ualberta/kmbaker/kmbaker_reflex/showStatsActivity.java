@@ -12,6 +12,28 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ This file is part of kmbaker-reflex.
+
+ kmbaker-reflex is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ kmbaker-reflex is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with kmbaker-reflex.  If not, see <http://www.gnu.org/licenses/>.
+
+ Used:
+ http://developer.android.com/guide/components/intents-filters.html, September 29, 2015 for
+ help making an Intent to send emails.
+
+ */
+
 public class showStatsActivity extends ActionBarActivity {
 
     private ListManager listManager = new ListManager();
@@ -115,12 +137,6 @@ public class showStatsActivity extends ActionBarActivity {
         sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Some stats for you");
         sendIntent.putExtra(Intent.EXTRA_TEXT, getEmailText());
         startActivity(Intent.createChooser(sendIntent, "send email"));
-        /*http://stackoverflow.com/questions/3132889/action-sendto-for-sending-an-email sept 29,  Pierangelo Dal Ben and Teo Inke*/
-        /*
-        Intent sendIntent = new Intent(Intent.ACTION_SENDTO);
-        Uri uri = Uri.parse("mailto:kmbaker@ualberta.ca");
-        sendIntent.setData(uri);
-        startActivity(Intent.createChooser(sendIntent, "Send email"));*/
     }
 
     public String getEmailText() {
