@@ -66,8 +66,8 @@ public class testReflexActivity extends ActionBarActivity {
             listManager.saveStatsInFile(this);
                     /* Testing Statistics class */
             setContentView(R.layout.activity_test_reflex);
-            TextView textView = (TextView) findViewById(R.id.textView2);
-            textView.setText(Long.toString(time));//Long.toString(stats.getMaxAll())
+            //TextView textView = (TextView) findViewById(R.id.textView2);
+            //textView.setText(Long.toString(time));//Long.toString(stats.getMaxAll())
 
             timerDone = false;
             startAgain();

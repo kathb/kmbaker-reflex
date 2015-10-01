@@ -19,18 +19,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Not yet!"
+        android:textSize="20dp"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView2"
-        android:layout_above="@+id/reflexButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp" />
 
 </RelativeLayout>
