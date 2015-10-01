@@ -35,6 +35,7 @@ public class twoPlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     public void clickButton2(View view) {
@@ -51,6 +52,7 @@ public class twoPlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     @Override

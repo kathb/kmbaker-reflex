@@ -11,6 +11,7 @@ import android.view.View;
 
 public class fourPlayerActivity extends ActionBarActivity {
     private Context context = this;
+    ListManager listManager = new ListManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class fourPlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     public void clickButton2(View view) {
@@ -46,6 +48,7 @@ public class fourPlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     public void clickButton3(View view) {
@@ -61,6 +64,7 @@ public class fourPlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     public void clickButton4(View view) {
@@ -76,6 +80,7 @@ public class fourPlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     @Override

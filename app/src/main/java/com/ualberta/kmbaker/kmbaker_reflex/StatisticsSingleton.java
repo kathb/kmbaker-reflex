@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by kmbaker on 9/28/15.
+ * Singleton like Abram Hindle in video 7 student picker
  */
 public class StatisticsSingleton {
     private static Statistics stats = null;

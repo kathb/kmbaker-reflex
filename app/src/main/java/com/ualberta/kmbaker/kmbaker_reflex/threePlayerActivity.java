@@ -33,6 +33,7 @@ public class threePlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     public void clickButton2(View view) {
@@ -48,6 +49,7 @@ public class threePlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     public void clickButton3(View view) {
@@ -63,6 +65,7 @@ public class threePlayerActivity extends ActionBarActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        listManager.saveBuzzerInFile(this);
     }
 
     @Override

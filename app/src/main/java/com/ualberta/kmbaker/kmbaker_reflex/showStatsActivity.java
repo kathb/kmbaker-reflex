@@ -100,6 +100,7 @@ public class showStatsActivity extends ActionBarActivity {
         GameShowStatsSingleton.getGameShowStats().clearGameShowStats();
         StatisticsSingleton.getStats().clearReflexStats();
         listManager.saveStatsInFile(this);
+        listManager.saveBuzzerInFile(this);
         //add in clear reflex stats
         printGameShowStats();
         printReflexStats();

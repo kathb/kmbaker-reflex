@@ -24,6 +24,7 @@ public class MainActivity extends ActionBarActivity {
         super.onStart();
 
         listManager.loadStatsFromFile(this); //have to call before setting up adapter
+        listManager.loadBuzzerFromFile(this);
     }
 
     @Override

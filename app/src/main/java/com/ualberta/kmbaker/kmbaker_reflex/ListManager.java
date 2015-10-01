@@ -24,9 +24,9 @@ import java.util.ArrayList;
 public class ListManager {
 
     private static final String STATSFILENAME = "statsfile.sav";
-    //private static final String BUZZERFILENAME = "buzzerfile.sav";
+    private static final String BUZZERFILENAME = "buzzerfile.sav";
     private static Statistics stats = StatisticsSingleton.getStats();
-    //private static GameShowStats buzzer = GameShowStatsSingleton.getGameShowStats();
+    private static GameShowStats buzzer = GameShowStatsSingleton.getGameShowStats();
 
     public ListManager() {
     }
@@ -53,6 +53,7 @@ public class ListManager {
             FileOutputStream fos = context.openFileOutput(STATSFILENAME, 0);
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
+            stats = StatisticsSingleton.getStats();
             gson.toJson(stats, writer);
             writer.flush();
             fos.close();
@@ -62,7 +63,7 @@ public class ListManager {
             throw new RuntimeException(e);
         }
     }
-/*
+
     public static void loadBuzzerFromFile(Context context) {
         try {
             FileInputStream fis = context.openFileInput(BUZZERFILENAME);
@@ -71,10 +72,10 @@ public class ListManager {
             // Taken from https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html
             Type listType = new TypeToken<GameShowStats>() {}.getType();
             buzzer = gson.fromJson(in, listType);
-            GameShowStatsSingleton.addStats(buzzer);
+            GameShowStatsSingleton.addGameShowStats(buzzer);
 
         } catch (FileNotFoundException e) {
-            GameShowStats gameShowStats = GameShowStatsSingleton.getGameShowStats();
+            //GameShowStats gameShowStats = GameShowStatsSingleton.getGameShowStats();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -84,6 +85,7 @@ public class ListManager {
         try {
             FileOutputStream fos = context.openFileOutput(BUZZERFILENAME, 0);
             OutputStreamWriter writer = new OutputStreamWriter(fos);
+            buzzer = GameShowStatsSingleton.getGameShowStats();
             Gson gson = new Gson();
             gson.toJson(buzzer, writer);
             writer.flush();
@@ -93,5 +95,5 @@ public class ListManager {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    } */
+    }
 }
