@@ -1,5 +1,10 @@
 # kmbaker-reflex
-Links I got help from:
+My app is called kmbaker-reflex.
+My video demonstration is on github.
+
+This app has a reaction timer and a game show buzzer that can be used by 2 to 4 people. It keeps track of your statistics for both your reflex times and the buzzer presses. The statistics can be shared by email. 
+
+Credit:
 
 Random int in range http://stackoverflow.com/questions/363681/generating-random-integers-in-a-range-with-java by Greg Case Sept 25, 2015, used in RandomWaitTime.java
 
@@ -7,7 +12,8 @@ http://developer.android.com/guide/components/intents-filters.html to make an in
 
 sorting arrayList: http://java67.blogspot.sg/2012/08/how-to-sort-arraylist-in-java-list.html September 25, 2015.
 
-Modeled StatisticsSingleton and GameShowStatsSingleton after singleton in Abram Hindle's Student Picker Youtube videos. Accessed September 28, 2015.
+Modeled StatisticsSingleton and GameShowStatsSingleton after singleton in Abram Hindle's Student Picker Youtube videos. https://www.youtube.com/watch?v=5PPD0ncJU1g&list=PL240uJOh_Vb4PtMZ0f7N8ACYkCLv0673O
+Accessed September 28, 2015.
 
 http://www.mkyong.com/android/android-alert-dialog-example/ and
 https://developer.android.com/guide/topics/ui/dialogs.html for making alert dialogs. September 25, 2015
@@ -19,3 +25,5 @@ for using CountDownTimer in testReflexActivity.java
 http://developer.android.com/guide/topics/ui/dialogs.html#AddingAList in UseBuzzerActivity.java
 
 http://stackoverflow.com/questions/7189784/how-to-fill-screen-with-four-buttons-with-the-table-layout by Felix Sept 28, 2015 for xml layout of buttons in GameShow Buzzer activities.
+
+The remaining code is copyright to Kathleen Baker and licensed under GNU General Public License Version 3. 
