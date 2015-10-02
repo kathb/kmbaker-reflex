@@ -17,3 +17,5 @@ https://androidcookbook.com/Recipe.seam;jsessionid=DF53064E03C7505C4EBF727E56E07
 for using CountDownTimer in testReflexActivity.java
 
 http://developer.android.com/guide/topics/ui/dialogs.html#AddingAList in UseBuzzerActivity.java
+
+http://stackoverflow.com/questions/7189784/how-to-fill-screen-with-four-buttons-with-the-table-layout by Felix Sept 28, 2015 for xml layout of buttons in GameShow Buzzer activities.
