@@ -2,7 +2,7 @@ package com.ualberta.kmbaker.kmbaker_reflex;
 
 /**
  * Created by kmbaker on 9/25/15.
- * A timer for the single user reflex
+ * A timer for the single user reflex game.
  *
  *This file is part of kmbaker-reflex.
  *

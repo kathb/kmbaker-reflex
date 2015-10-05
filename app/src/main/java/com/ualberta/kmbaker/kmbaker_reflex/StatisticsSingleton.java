@@ -31,6 +31,7 @@ public class StatisticsSingleton {
         }
         return stats;
     }
+    /* Used with saving and loading from files */
     public static void addStats(Statistics statArrays)
     {
         getStats().setAllStats(statArrays.getAllStats());

@@ -11,6 +11,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 /*
+ This class displays an alertDialog for the user to choose how many players.
+
  This file is part of kmbaker-reflex.
 
  kmbaker-reflex is free software: you can redistribute it and/or modify

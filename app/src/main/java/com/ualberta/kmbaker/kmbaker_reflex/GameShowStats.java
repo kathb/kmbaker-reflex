@@ -17,6 +17,8 @@ package com.ualberta.kmbaker.kmbaker_reflex;
 
  You should have received a copy of the GNU General Public License
  along with kmbaker-reflex.  If not, see <http://www.gnu.org/licenses/>.
+
+ This class keeps track of the statistics for the game show buzzer game.
  */
 public class GameShowStats {
     private Integer twoPlayers1;

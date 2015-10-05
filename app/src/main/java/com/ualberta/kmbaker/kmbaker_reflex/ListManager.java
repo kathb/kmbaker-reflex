@@ -20,6 +20,7 @@ import java.util.ArrayList;
  * Created by kmbaker on 9/30/15.
  *
  * Designed using the Gson file saving and loading code added in Cmput 301, lab 3 in lonelytwitter.
+ * This class saves and writes the statistics for the reflex timer and the game show buzzer to files.
  *
  *  This file is part of kmbaker-reflex.
  *

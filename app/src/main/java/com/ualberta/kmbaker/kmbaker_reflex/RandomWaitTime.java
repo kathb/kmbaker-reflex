@@ -3,6 +3,7 @@ package com.ualberta.kmbaker.kmbaker_reflex;
 import java.util.Random;
 /**
  * Created by kmbaker on 9/25/15.
+ * This class generates random wait times for the reflex timer.
  *
  * This file is part of kmbaker-reflex.
  *

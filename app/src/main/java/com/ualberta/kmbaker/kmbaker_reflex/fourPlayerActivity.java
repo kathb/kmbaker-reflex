@@ -22,7 +22,10 @@ import android.view.View;
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with kmbaker-reflex.  If not, see <http://www.gnu.org/licenses/>.*/
+    along with kmbaker-reflex.  If not, see <http://www.gnu.org/licenses/>.
+
+    This activity displays the buttons and calls methods for GameShowStats to record statistics.
+    */
 
 public class fourPlayerActivity extends ActionBarActivity {
     private Context context = this;

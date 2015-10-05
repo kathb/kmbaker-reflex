@@ -7,6 +7,7 @@ import java.util.Collections;
 
 /**
  * Created by kmbaker on 9/25/15.
+ * This class keeps track of the statistics for the reflex timer game.
  *
  * This file is part of kmbaker-reflex.
 

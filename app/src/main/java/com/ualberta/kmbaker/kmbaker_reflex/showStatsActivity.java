@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+ This activity shows the stats on the screen and calls methods in Statistics and GameShowBuzzer to
+ clear stats.
+
  This file is part of kmbaker-reflex.
 
  kmbaker-reflex is free software: you can redistribute it and/or modify

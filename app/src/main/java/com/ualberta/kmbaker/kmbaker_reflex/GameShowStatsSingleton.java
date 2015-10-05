@@ -4,7 +4,7 @@ package com.ualberta.kmbaker.kmbaker_reflex;
  * Created by kmbaker on 9/28/15.
  * Modeled after the singleton from Abram Hindle's Youtube videos Student Picker for Android.
  *
- * This file is part of kmbaker-reflex.
+ This file is part of kmbaker-reflex.
 
  kmbaker-reflex is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

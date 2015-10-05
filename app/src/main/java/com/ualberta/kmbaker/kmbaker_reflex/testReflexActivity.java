@@ -17,6 +17,9 @@ import android.widget.TextView;
 
 
 /*
+ This activity displays the reflex button and uses RandomWaitTime and ReflexTimer to
+ tell the user when to click.
+
  This file is part of kmbaker-reflex.
 
  kmbaker-reflex is free software: you can redistribute it and/or modify
@@ -71,7 +74,6 @@ public class testReflexActivity extends ActionBarActivity {
         } else {
             // record end time
             // save in file
-
             timer.setEndTime();
             time = timer.getTimeInterval();
             //need to change types in statistics class to long
