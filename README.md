@@ -1,6 +1,6 @@
 # kmbaker-reflex
 My app is called kmbaker-reflex.
-My video demonstration is on github.
+My video demonstration is on github and is called kmbaker-reflexapp.mkv.
 
 This app has a reaction timer for a single user and a game show buzzer that can be used by 2 to 4 people. It keeps track of your statistics for both your reflex times and the buzzer presses. The statistics can be shared by email. 
 
